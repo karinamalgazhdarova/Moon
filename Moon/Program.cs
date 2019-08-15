@@ -27,13 +27,13 @@ namespace Moon
 
                 for (int i = 0; i < parityOfNumber; i++)
                 {
-                    int a = Int16.Parse(new string(userInput[i],1));
+                    int a = Int16.Parse(new string(userInput[i], 1));
 
                     if (i % 2 == 0)
                     {
                         if (a * 2 > 9)
                         {
-                            result += 2*a - 9;
+                            result += 2 * a - 9;
                         }
 
                         else
@@ -53,12 +53,37 @@ namespace Moon
                 }
 
             }
-            Console.WriteLine(result);
+            else
+            {
+                for (int i = 0; i < parityOfNumber; i++)
+                {
+                    int a = Int16.Parse(new string(userInput[i], 1));
 
-            Console.ReadKey();
+                    if (i % 2 != 0)
+                    {
+                        if (a * 2 > 9)
+                        {
+                            result += 2 * a - 9;
+                        }
+
+                        else
+                        {
+                            result += a * 2;
+                        }
+
+                    }
+                    else
+                    {
+                        result += a;
+                    }
+                }
+                Console.WriteLine(result);
+
+                Console.ReadKey();
 
 
+            }
         }
-    }
 
+    }
 }
